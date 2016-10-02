@@ -15,6 +15,15 @@ var articleone = {
     <p>This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article oneThis is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.</p>`
 };
 
+var articletwo = {
+  title : 'Article Two | Geoes Shaji'  ,
+  heading : 'Article Two',
+  date : 'Oct 6nd 2016',
+  content : `
+    <p>This is my first paragraph in Article Two
+       This is my first paragraph in Article Two</p>`
+};
+
 function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
@@ -59,7 +68,7 @@ app.get('/article-one',function(req, res){
 });
 
 app.get('/article-two',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(createTemplate(articletwo));
 });
 
 app.get('/article-three',function(req, res){
