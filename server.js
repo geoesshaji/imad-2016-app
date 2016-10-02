@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req, res){
-   res.send("Article one loaded"); 
+   res.sendFile(path.join(_dirname, 'ui', 'article-one.html')); 
 });
 
 app.get('/article-two',function(req, res){
@@ -20,9 +20,6 @@ app.get('/article-three',function(req, res){
    res.send("Article three loaded"); 
 });
 
-app.get('/image', function(req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
