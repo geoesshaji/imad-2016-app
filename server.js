@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles = {
+     'article-one': {
   title : 'Article One | Geoes Shaji'  ,
   heading : 'Article One',
   date : 'Oct 2nd 2016',
@@ -13,24 +14,23 @@ var articleone = {
     <p>This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article oneThis is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.</p>
     <p>This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article oneThis is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.</p>
     <p>This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article oneThis is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.This is my first paragraph in Article one.</p>`
-};
-
-var articletwo = {
-  title : 'Article Two | Geoes Shaji'  ,
-  heading : 'Article Two',
-  date : 'Oct 6th 2016',
-  content : `
-    <p>This is my first paragraph in Article Two
-       This is my first paragraph in Article Two</p>`
-};
-
-var articlethree = {
-  title : 'Article Three | Geoes Shaji'  ,
-  heading : 'Article Three',
-  date : 'Oct 12th 2016',
-  content : `
-    <p>This is my first paragraph in Article Three
-       This is my first paragraph in Article Three</p>`
+} ,
+     'article-two': {
+      title : 'Article Two | Geoes Shaji'  ,
+      heading : 'Article Two',
+      date : 'Oct 6th 2016',
+      content : `
+        <p>This is my first paragraph in Article Two
+           This is my first paragraph in Article Two</p>`
+} ,
+     'article-three': {
+      title : 'Article Three | Geoes Shaji'  ,
+      heading : 'Article Three',
+      date : 'Oct 12th 2016',
+      content : `
+        <p>This is my first paragraph in Article Three
+           This is my first paragraph in Article Three</p>`
+} ,
 };
 
 function createTemplate(data) {
@@ -72,8 +72,9 @@ function createTemplate(data) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one',function(req, res){
-   res.send(createTemplate(articleone));
+app.get('/:articleName',function(req, res){
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two',function(req, res){
