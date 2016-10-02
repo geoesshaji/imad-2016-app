@@ -18,10 +18,19 @@ var articleone = {
 var articletwo = {
   title : 'Article Two | Geoes Shaji'  ,
   heading : 'Article Two',
-  date : 'Oct 6nd 2016',
+  date : 'Oct 6th 2016',
   content : `
     <p>This is my first paragraph in Article Two
        This is my first paragraph in Article Two</p>`
+};
+
+var articlethree = {
+  title : 'Article Three | Geoes Shaji'  ,
+  heading : 'Article Three',
+  date : 'Oct 12th 2016',
+  content : `
+    <p>This is my first paragraph in Article Three
+       This is my first paragraph in Article Three</p>`
 };
 
 function createTemplate(data) {
@@ -72,7 +81,7 @@ app.get('/article-two',function(req, res){
 });
 
 app.get('/article-three',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+    res.send(createTemplate(articlethree));
 });
 
 
