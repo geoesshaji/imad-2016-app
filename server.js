@@ -20,6 +20,11 @@ app.get('/article-three',function(req, res){
    res.send("Article three loaded"); 
 });
 
+app.get('/image', function(req, res){
+    re.sendFile(path.join(_dirname,'ui','madi.png'));
+}
+);
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
