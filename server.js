@@ -21,9 +21,8 @@ app.get('/article-three',function(req, res){
 });
 
 app.get('/image', function(req, res){
-    res.send("Sorry image cannot be loaded");
-}
-);
+  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
