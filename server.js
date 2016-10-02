@@ -21,7 +21,7 @@ app.get('/article-three',function(req, res){
 });
 
 app.get('/image', function(req, res){
-    re.sendFile(path.join(_dirname,'ui','madi.png'));
+    res.sendFile(path.join(_dirname,'ui','madi.png'));
 }
 );
 
