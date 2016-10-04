@@ -28,8 +28,6 @@ var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     //Make a request to server and send name
-     var nameInput = document.getElementById('name');
-     var name = nameInput.value;
      var request = new XMLHttpRequest();
     //Capture the response and store it in a variable
     request.onreadystatechange = function(){
@@ -49,6 +47,8 @@ submit.onclick = function() {
         
     };
     //Make the request
+    var nameInput = document.getElementById('name');
+     var name = nameInput.value;
     request.open('GET', 'http://geoesshaji.imad.hasura-app.io/submit-name?name='+ name, true);
     request.send(null);
     
