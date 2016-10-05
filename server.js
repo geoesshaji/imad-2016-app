@@ -63,6 +63,8 @@ function createTemplate(data) {
                 </div>
                 <div>
                     <textarea name = "commentBox" placeholder="Type your comments here Please."></textarea>
+                    <hr/>
+                    <input type = "text" name= "articleTextBox">
                 </div>
             </div>
         </body>
