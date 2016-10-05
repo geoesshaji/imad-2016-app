@@ -88,8 +88,8 @@ app.get('/counter', function (req, res){
 //changes made by myself
 var comments = [];
 app.get('/comment-name', function(req, res){//Now it is in the form of a query as /comment-name?name=xxxx
-   var name = req.query.comments;
-   comments.push(name);
+   var comment = req.query.name;
+   comments.push(comment);
    res.send(JSON.stringify(comments));
 });
 
