@@ -58,7 +58,7 @@ submit.onclick = function() {
     };
     
 //code added by myself
-var commentInput = document.getElementById('commentBox');
+var commentInput = document.getElementById('comment');
 var comment = commentInput.value;
 var submitcomment = document.getElementById('comment_btn');
 submitcomment.onclick = function() {
@@ -69,13 +69,13 @@ submitcomment.onclick = function() {
       if(request.readyState === XMLHttpRequest.DONE){
           //Take some action
           if(request.status === 200){
-                var names = request.responseText;
-                names = JSON.parse(names);
+                var comments = request.responseText;
+                comments = JSON.parse(comments);
                 var list = '';
-                for(var i = 0; i<names.length ; i++){
-                    list += '<li>' + names[i] + '</li>';
+                for(var i = 0; i<comments.length ; i++){
+                    list += '<li>' + comments[i] + '</li>';
                 }
-                var ul =document.getElementById('commentList');
+                var ul =document.getElementById('commentlist');
                 ul.innerHTML = list;
           }
       }
@@ -83,8 +83,8 @@ submitcomment.onclick = function() {
     };
     //Make the request
     var nameInput = document.getElementById('comment');
-     var name = nameInput.value;
-    request.open('GET', 'http://geoesshaji.imad.hasura-app.io/comment-name?name='+ name, true);
+     var comment = commentInput.value;
+    request.open('GET', 'http://geoesshaji.imad.hasura-app.io/comment-name?name='+ comment, true);
     request.send(null);
     
     
