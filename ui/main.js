@@ -82,9 +82,9 @@ submitcomment.onclick = function() {
         
     };
     //Make the request
-    var nameInput = document.getElementById('name');
+    var nameInput = document.getElementById('comment');
      var name = nameInput.value;
-    request.open('GET', 'http://geoesshaji.imad.hasura-app.io/submit-name?name='+ name, true);
+    request.open('GET', 'http://geoesshaji.imad.hasura-app.io/comment-name?name='+ name, true);
     request.send(null);
     
     
