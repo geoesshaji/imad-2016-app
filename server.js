@@ -91,6 +91,16 @@ app.get('/submit-name', function(req, res){//Now it is in the form of a query as
    res.send(JSON.stringify(names));
 });
 
+//changes made by myself
+var comments = [];
+app.get('/comment-name', function(req, res){//Now it is in the form of a query as /comment-name?name=xxxx
+   var name = req.query.comments;
+   names.push(comments);
+   res.send(JSON.stringify(comments));
+});
+
+
+
 app.get('/:articleName',function(req, res){
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
