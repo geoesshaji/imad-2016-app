@@ -62,11 +62,6 @@ function createTemplate(data) {
                     ${content}
                 </div>
                 <div>
-                    <textarea name = "commentBox" placeholder="Type your comments here Please."></textarea>
-                    <hr/>
-                    <input type = "text" name= "articleTextBox">
-                </div>
-                <div>
                 <textarea name = "commentBox" id = 'comment' placeholder="Type your comments here Please."></textarea>
                 <input type= "submit" id="comment_btn" value="Submit Commnent">
                 <ul id="commentlist">
