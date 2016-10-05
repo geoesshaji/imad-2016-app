@@ -61,6 +61,9 @@ function createTemplate(data) {
                 <div>
                     ${content}
                 </div>
+                <div>
+                    <textarea name = "commentBox" placeholder="Type your comments here Please."></textarea>
+                </div>
             </div>
         </body>
     </html>
