@@ -84,12 +84,6 @@ app.get('/counter', function (req, res){
     res.send(counter.toString());
 });
 
-var names = [];
-app.get('/submit-name', function(req, res){//Now it is in the form of a query as /submit-name?name=xxxx
-   var name = req.query.name;
-   names.push(name);
-   res.send(JSON.stringify(names));
-});
 
 //changes made by myself
 var comments = [];
@@ -98,6 +92,17 @@ app.get('/comment-name', function(req, res){//Now it is in the form of a query a
    names.push(comments);
    res.send(JSON.stringify(comments));
 });
+
+
+
+var names = [];
+app.get('/submit-name', function(req, res){//Now it is in the form of a query as /submit-name?name=xxxx
+   var name = req.query.name;
+   names.push(name);
+   res.send(JSON.stringify(names));
+});
+
+
 
 
 
