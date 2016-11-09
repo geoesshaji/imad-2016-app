@@ -113,6 +113,11 @@ app.get('/:articleName',function(req, res){
     res.send(createTemplate(articles[articleName]));
 });
 
+//making changes
+app.get('/ui/onlineShopSite.html',function(req, res){
+    res.sendFile(path.join(__dirname, 'ui', 'onlineShopSite.html'));
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
