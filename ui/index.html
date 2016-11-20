@@ -1,51 +1,200 @@
-<!doctype html>
-<html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class = "container">
-            <div class="center">
-                <img id ="madi" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhVHjIMcZdUO91nEvpm0gQIYWS98i-rtcsiQ8flb0MhLUyqO0xmw" class="img-medium"/>
+<!DOCTYPE html>
+<html lang="en-Us">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css"> 
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+video{
+	position:relative;
+	width:100%;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+color: #4CAF50;  
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active >   
+ a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+color: white; 
+background-color: #4CAF50;
+}
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #262626;
+   text-decoration: none;
+  background-color: #66CCFF;  
+   }
+
+
+.navbar-inverse{
+position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+.navbar-inverse:hover{background-color:white;}
+.navbar-inverse .navbar-brand:hover{color:#4CAF50;}
+
+ .modal-header, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+</style>
+  </head>
+<body>
+
+ <video autoplay loop="true" muted>
+<!--<source src="mov_bbb.mp4" type="video/mp4"> -->
+  <source src="Gold Dust wind Particles hd Background.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" id="mySignupBtn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#" id="myBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+
+</nav>
+
+<footer>
+Posted By Geoes Shaji 
+</footer>
+
+<div class="container">
+ <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
             </div>
-            <hr/>
-            <h3>Pernal Profile</h3>
-            <div>
-                Hi! I am Geoes Shaji.
-                <br/>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="psw" placeholder="Enter password">
             </div>
-            <hr/>
-            <h3>Professional Profile</h3>
-            <div>
-                 I am not yet working.
-                <br/>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
             </div>
-            
-            <hr/>
-            
-            <div>
-                <textarea name = "commentBox" id = 'comment' placeholder="Type your comments here Please."></textarea>
-                <input type= "submit" id="comment_btn" value="Submit Commnent">
-                <ul id="commentlist">
-                    
-                </ul>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a id="signuplink" href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+ 
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+<div class="container">
+ <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="mySignupModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> SignUp</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
             </div>
-            
-            <hr/>
-            <div class = "footer">
-                This button <button id = "counter">Click Me!</button> has been clicked <span id = "count">0</span> times.
-                <hr/>
-                <input type = "text" id = "name" placeholder = "name">
-                <input type = "submit" id = "submit_btn" value = "Submit">
-                <ul id = 'namelist'>
-                 
-                </ul>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="psw" placeholder="Enter password">
             </div>
-            <hr/>
-            
-            
-        </div>    
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
-    </body>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> SignUp</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+		  </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+ 
+<script>
+$(document).ready(function(){
+	
+    $("#signuplink").click(function(){
+        $("#mySignupModal").modal();
+    });
+	$("#mySignupBtn").click(function(){
+        $("#mySignupModal").modal();
+    });
+});
+</script>
+ </body>
 </html>
